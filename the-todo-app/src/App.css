@@ -1,30 +1,41 @@
+:root{
+  --main-color: #004d40;
+  --main-color-light: #004d4045;
+  --dark-color: #212121;
+  --dark-color-light: #33333325;
+  --light-color: #F6F6FD;
+  --red-color: #CC1439;
+  --red-color-light: #B76D6D;
+  
+}
+
 .container{
   display: block;
-  background: #F6F6FD;
+  background: var(--white-color);
   width: 450px;
   padding: 0 25px;
   margin: 25px auto;
   font-family: 'ropa sans', 'source sans pro', Helvetica, sans-serif;
-  box-shadow: 0px 0px 4px -2px #4A128C;
+  box-shadow: 0px 0px 4px -2px ;
   border-radius: 3px;
-  border: 1px solid #4a128c45;
+  border: 1px solid var(--main-color-light);
 }
 
 .container .header h1{
   font-size: 50px;
-  color: #4A128C;
+  color: var(--main-color);
   font-weight: 700;
   text-align: center;
   padding: 20px 0
 }
 
 .container .header .input{
-  background: #fff;
+  background: var(--white-color);
   display: block;
   height: 40px;
   border-radius: 0px;
-  box-shadow: 0px 1px 4px -2px #33333345;
-  border-bottom: 1px solid #33333325;
+  box-shadow: 0px 1px 4px -2px var(--dark-color-light);
+  border-bottom: 1px solid var(--dark-color-light);
 }
 
 .container .header .input .add-todo{
@@ -35,7 +46,7 @@
   font-size: 17px;
   font-family: 'ropa sans', 'source sans pro', Helvetica, sans-serif;
   font-weight: light;
-  color: #212121;
+  color: var(--dark-color);
   padding-left: 10px;
   outline: none;
   float: left;
@@ -47,14 +58,14 @@
   width: 12%;
   border: none;
   cursor: pointer;
-  color: #4A128C;
+  color: var(--main-color);
   font-size: 17px;
   outline: none;
-  transition: all 250ms ease-out
+  transition: all 250ms ease
 }
 
 .container .header .input button:hover{
-  background: #CECECE;
+  background: var(--main-color-light)
 }
 
 .container .main{
@@ -64,16 +75,16 @@
 .container .main .todo-item{
   display: block;
   margin-bottom: 10px;
-  box-shadow: 0px 1px 4px -2px #33333345;
+  box-shadow: 0px 1px 4px -2px var(--dark-color-light);
   position: relative;
 }
 
 .container .main .todo-item.done{
-  background: #33333317
+  background: var(--main-color-light)
 }
 
 .container .main .todo-item.not-yet{
-  background: #33333307
+  background: var(--dark-color-light)
 }
 
 
@@ -91,7 +102,7 @@
   height: 22px;
   margin: 10px;
   border-radius: 100%;
-  border: 2px solid #4A128C;
+  border: 2px solid var(--main-color);
   outline: none;
   cursor: pointer;
 }
@@ -102,7 +113,7 @@
   width: 14px;
   height: 14px;
   border-radius: 100%;
-  background: #4A128C;
+  background: var(--main-color);
   position: relative;
   top: 2px;
   left: 2px
@@ -126,7 +137,7 @@
   height: 40px;
   width: 100%;
   border: none;
-  color: #b76d6d;
+  color: var(--red-color-light);
   background: transparent;
   cursor: pointer;
   transition: all 250ms ease-in;
@@ -134,6 +145,6 @@
 }
 
 .todo-delete button:hover{
-  color: #cc1439;
+  color: var(--red-color);
   transform: rotate(15deg)
 }
