@@ -24,6 +24,10 @@ export default class TodoApp extends Component {
         }
     }
 
+    componentDidMount(){
+        this.sorteList()
+    }
+
     onCheck = (id) => {
         this.setState({ 
             todoList: this.state.todoList.map((todoItem) => {
@@ -42,6 +46,8 @@ export default class TodoApp extends Component {
     }
 
     addItem = (e) => {
+        console.log(e.target);
+        
         let newItem_content = e.target.parentElement.firstElementChild.value
 
         if (newItem_content !== "" && newItem_content !== undefined ){
@@ -58,8 +64,6 @@ export default class TodoApp extends Component {
     sorteList = () =>{
         this.setState({
             todoList: [...this.state.todoList.filter(item => !item.checked), ...this.state.todoList.filter(item => item.checked)]
-        }, ()=>{
-            console.log(this.state.todoList);
         })
     }
 
@@ -67,10 +71,10 @@ export default class TodoApp extends Component {
         return (
             <div className="container">
                 <div className="header">
-                    <h1>The Todo App</h1>
+                    <h1>The-Todo-App</h1>
                     <div className="input">
                         <input type="text" name="add-todo" id="add-todo" className="add-todo" placeholder="Add a todo"/>
-                        <button onClick={this.addItem} className="add-btn"><span className="fa fa-plus"></span></button>
+                        <button onClick={this.addItem} className="add-btn fa fa-plus"></button>
                     </div>
                 </div>
                 <div className="main">
