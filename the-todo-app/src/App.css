@@ -1,22 +1,139 @@
-.App {
+.container{
+  display: block;
+  background: #F6F6FD;
+  width: 450px;
+  padding: 0 25px;
+  margin: 25px auto;
+  font-family: 'ropa sans', 'source sans pro', Helvetica, sans-serif;
+  box-shadow: 0px 0px 4px -2px #4A128C;
+  border-radius: 3px;
+  border: 1px solid #4a128c45;
+}
+
+.container .header h1{
+  font-size: 50px;
+  color: #4A128C;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px 0
+}
+
+.container .header .input{
+  background: #fff;
+  display: block;
+  height: 40px;
+  border-radius: 0px;
+  box-shadow: 0px 1px 4px -2px #33333345;
+  border-bottom: 1px solid #33333325;
+}
+
+.container .header .input .add-todo{
+  display: block;
+  height: 100%;
+  width: 88%;
+  border: none;
+  font-size: 17px;
+  font-family: 'ropa sans', 'source sans pro', Helvetica, sans-serif;
+  font-weight: light;
+  color: #212121;
+  padding-left: 10px;
+  outline: none;
+  float: left;
+}
+
+.container .header .input .add-btn{
+  display: block;
+  height: 100%;
+  width: 12%;
+  border: none;
+  cursor: pointer;
+  color: #4A128C;
+  font-size: 17px;
+  outline: none;
+  transition: all 250ms ease-out
+}
+
+.container .header .input button:hover{
+  background: #CECECE;
+}
+
+.container .main{
+  margin: 25px 0 15px 0
+}
+
+.container .main .todo-item{
+  display: block;
+  margin-bottom: 10px;
+  box-shadow: 0px 1px 4px -2px #33333345;
+  position: relative;
+}
+
+.container .main .todo-item.done{
+  background: #33333317
+}
+
+.container .main .todo-item.not-yet{
+  background: #33333307
+}
+
+
+.todo-checked{
+  display: block;
+  width: 10%;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+
+.todo-checked input{
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 10px;
+  border-radius: 100%;
+  border: 2px solid #4A128C;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-checked input:checked::after{
+  display: block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background: #4A128C;
+  position: relative;
+  top: 2px;
+  left: 2px
+}
+
+.todo-content{
+  display: inline-block;
+  width: 80%;
+  padding: 10px;
+}
+
+.todo-delete{
+  display: inline-block;
+  width: 10%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.todo-delete button{
+  display: block;
+  line-height: 0;
+  height: 40px;
+  width: 100%;
+  border: none;
+  color: #b76d6d;
+  background: transparent;
+  cursor: pointer;
+  transition: all 250ms ease-in;
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.todo-delete button:hover{
+  color: #cc1439;
+  transform: rotate(15deg)
 }
