@@ -3,6 +3,8 @@ import TodoList from "./TodoList"
 import { connect } from "react-redux"
 import { addTodo, deleteTodo, sorteTodo, checkTodo } from "./../todoStore"
 
+import dataStore from "./../todoStore"
+
 const mapStateToProps = (todoStore) => ({
     todoList: todoStore.todo
 })
@@ -47,13 +49,18 @@ const TodoApp = connectStore(class extends Component {
 
     }
 
+    onTyping = (e) => {
+        if (e.keyCode === 13)
+            this.addItem()
+    }
+
     render() {
         return (
             <div className="container">
                 <div className="header">
                     <h1>The-Todo-App</h1>
                     <div className="input">
-                        <input type="text" name="add-todo" id="add-todo" className="add-todo" placeholder="Add a todo" />
+                        <input onKeyDown={this.onTyping} type="text" name="add-todo" id="add-todo" className="add-todo" placeholder="Add a todo" />
                         <button onClick={this.addItem} className="add-btn fa fa-plus"></button>
                     </div>
                 </div>
