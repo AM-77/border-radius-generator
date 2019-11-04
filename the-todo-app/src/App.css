@@ -1,12 +1,11 @@
 :root{
   --main-color: #004d40;
-  --main-color-light: #004d4045;
+  --main-color-light: #004d4065;
   --dark-color: #212121;
   --dark-color-light: #33333325;
   --light-color: #F6F6FD;
   --red-color: #CC1439;
   --red-color-light: #B76D6D;
-  
 }
 
 .container{
@@ -30,7 +29,7 @@
 }
 
 .container .header .input{
-  background: var(--white-color);
+  background: var(--dark-color-light);
   display: block;
   height: 40px;
   border-radius: 0px;
@@ -45,8 +44,8 @@
   border: none;
   font-size: 17px;
   font-family: 'ropa sans', 'source sans pro', Helvetica, sans-serif;
-  font-weight: light;
-  color: var(--dark-color);
+  color: var(--dark-color) !important;
+  background: transparent;
   padding-left: 10px;
   outline: none;
   float: left;
@@ -59,6 +58,7 @@
   border: none;
   cursor: pointer;
   color: var(--main-color);
+  background: var(--dark-color-light);
   font-size: 17px;
   outline: none;
   transition: all 250ms ease
