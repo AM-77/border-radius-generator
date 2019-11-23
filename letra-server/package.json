@@ -1,0 +1,29 @@
+{
+  "name": "letra-server",
+  "version": "1.0.0",
+  "description": "The letra app server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "node",
+    "express",
+    "rest",
+    "api",
+    "scraper"
+  ],
+  "author": "AM-77",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
