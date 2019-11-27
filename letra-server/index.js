@@ -2,6 +2,11 @@ const scrap = require("./scrap")
 const types = require("./types")
 const express = require('express')
 const app = express()
+const cors = require('cors')
+const dotenv = require('dotenv');
+
+app.use(cors())
+dotenv.config()
 
 const BASE_LINK = "https://www.azlyrics.com"
 const SEARCH_LINK = "https://search.azlyrics.com/search.php?q="
@@ -98,4 +103,4 @@ app.get("/search/:query", (req, res) => {
         res.redirect("/home")
 })
 
-app.listen(PORT, () => console.log("Letra Server is running ..."));
+app.listen(PORT, () => console.log(`Letra Server is running on port ${PORT} ...`));
