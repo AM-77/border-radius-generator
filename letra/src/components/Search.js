@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
+import { LetraContext } from "./../AppContext"
 
-
-
-export default class Search extends Component {
+class Search extends Component {
 
     componentDidMount() {
-        Axios.get("http://localhost:3300/search/" + this.props.match.params.looking_for)
+        const base_url = this.context.base_url
+        Axios.get(base_url + "/search/" + this.props.match.params.looking_for)
             .then((res) => {
                 console.log(res.data)
             })
@@ -20,3 +20,6 @@ export default class Search extends Component {
         )
     }
 }
+
+Search.contextType = LetraContext
+export default Search
