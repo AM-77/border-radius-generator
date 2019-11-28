@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import Axios from "axios"
-
 import { Link } from "react-router-dom"
+import { LetraContext } from '../AppContext'
 
-export default class Home extends Component {
-
-    list = [] // un-used !!!
+class Home extends Component {
 
     constructor(props) {
         super(props)
@@ -17,7 +15,8 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        Axios.get("http://localhost:3300/").then((res) => {
+        const base_url = this.context.base_url
+        Axios.get(base_url).then((res) => {
             this.setState(state => ({
                 hotalbums: res.data.hotalbums,
                 hotsongs: res.data.hotsongs,
@@ -76,3 +75,6 @@ export default class Home extends Component {
         )
     }
 }
+
+Home.contextType = LetraContext
+export default Home
