@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Axios from "axios"
-
 import { Link } from "react-router-dom"
+import { LetraContext } from '../AppContext'
 
-export default class Artist extends Component {
+class Artist extends Component {
 
     constructor(props) {
         super(props)
@@ -16,7 +16,8 @@ export default class Artist extends Component {
     }
 
     componentDidMount() {
-        Axios.get("http://localhost:3300/artist/" + this.state.artist).then((res) => {
+        const base_url = this.context.base_url
+        Axios.get(base_url + "/artist/" + this.state.artist).then((res) => {
             this.setState(state => ({
                 artist_name: res.data.artist,
                 albums: res.data.albums,
@@ -71,3 +72,6 @@ export default class Artist extends Component {
         )
     }
 }
+
+Artist.contextType = LetraContext
+export default Artist
