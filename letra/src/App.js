@@ -1,4 +1,4 @@
-import React, { Component, createContext } from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Home from "./components/Home"
 import Lyrics from "./components/Lyrics"
@@ -7,16 +7,12 @@ import Navbar from "./components/Navbar"
 import Search from './components/Search'
 import NotFound from "./components/NotFound"
 
-
-export const URLContext = createContext('http://localhost:3300')
+import AppContext from "./AppContext";
 
 class App extends Component {
   render() {
     return (
-      <URLContext.Provider >
-
-        <NotFound></NotFound>
-
+      <AppContext>
         <Router>
           <div><Navbar /></div>
           <div>
@@ -29,7 +25,8 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </URLContext.Provider>
+
+      </AppContext>
     )
   }
 }
