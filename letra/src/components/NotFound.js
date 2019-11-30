@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-
-import { URLContext } from "./../App"
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
 
 class NotFound extends Component {
-
-    static contextType = URLContext
     render() {
-
-        console.log(this.context)
         return (
-            <div>
-                <p>Not Found</p>
+            <div className="not-found">
+                <p>404</p>
+                <h1>Page Not Found</h1>
+                <Link to="/">Go Back To Home</Link>
             </div>
         )
     }
