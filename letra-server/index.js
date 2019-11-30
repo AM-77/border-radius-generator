@@ -43,20 +43,33 @@ app.get("/artists/:first_letter", (req, res) => {
 })
 
 app.get("/artist/:artist_name", (req, res, next) => {
-    if (req.params.artist_name)
-        scrap(`${BASE_LINK}/${req.params.artist_name.slice(0,1)}/${req.params.artist_name}.html`, types.ARTIST)
-        .then((result) => {
-            if (Object.keys(result).length === 0 && result.constructor === Object)
-                res.status(200).json({
-                    result: {}
-                }).end()
-            else
-                res.status(200).json(result).end()
-        })
+    if (req.params.artist_name){
+        
+        if(!isNaN(req.params.artist_name.slice(0, 1))){
+            scrap(`${BASE_LINK}/19/${req.params.artist_name}.html`, types.ARTIST)
+            .then((result) => {
+                if (Object.keys(result).length === 0 && result.constructor === Object)
+                    res.status(200).json({
+                        result: {}
+                    }).end()
+                else
+                    res.status(200).json(result).end()
+            })
+        }else{
+            scrap(`${BASE_LINK}/${req.params.artist_name.slice(0,1)}/${req.params.artist_name}.html`, types.ARTIST)
+            .then((result) => {
+                if (Object.keys(result).length === 0 && result.constructor === Object)
+                    res.status(200).json({
+                        result: {}
+                    }).end()
+                else
+                    res.status(200).json(result).end()
+            })
+        }
+        
+    }
     else
-        res.status(200).json({
-            error: "Unspecified artist's name."
-        }).end()
+        res.status(200).json({ error: "Unspecified artist's name." }).end()
 })
 
 app.get("/lyrics/:artist/:title", (req, res) => {

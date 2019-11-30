@@ -24,7 +24,7 @@ module.exports = (url, type) => {
 
                         $('body > div.container.main-page > div > .text-center div').contents().filter(function () {
                             if (this.nodeType == 8) {
-                                result.lyrics = $(this.parent).text().trim().replace(new RegExp(/\[/g), "~ ").replace(new RegExp(/\]/g), " ~").replace(":", "").split("\n")
+                                result.lyrics = $(this.parent).text().trim().replace(new RegExp(/:/g), "").split("\n")
                             }
                         })
                         break
@@ -67,7 +67,8 @@ module.exports = (url, type) => {
                             let hotsong = {
                                 artist: "",
                                 title: "",
-                                link: ""
+                                artist_link: "",
+                                title_link: ""
                             }
 
                             hotsongs.map(track => {
@@ -76,12 +77,15 @@ module.exports = (url, type) => {
 
                                     hotsong.artist = $(track).text().split("-")[0].replace(new RegExp(/\"/g), "", "").trim()
                                     hotsong.title = $(track).text().split("-")[1].replace(new RegExp(/\"/g), "", "").trim()
-                                    hotsong.link = $(track).attr("href").slice(18, $(track).attr("href").indexOf(".html"))
+                                    hotsong.title_link = $(track).attr("href").slice(18, $(track).attr("href").indexOf(".html"))
+                                    hotsong.artist_link = "/artist/" + $(track).attr("href").slice(26).slice(0, $(track).attr("href").slice(26).indexOf("/"))
+
                                     result.hotsongs.push(hotsong)
                                     hotsong = {
                                         artist: "",
                                         title: "",
-                                        link: ""
+                                        artist_link: "",
+                                        title_link: ""
                                     }
                                 }
 
@@ -125,9 +129,15 @@ module.exports = (url, type) => {
                         result = []
                         $("body > div.container.main-page > div > div > div > table tbody a").filter(function () {
                             if ($(this).has("b").attr("href")) {
+                            
+   
                                 result.push({
                                     title: $(this).has("b").text(),
-                                    link: $(this).has("b").attr("href").slice(24, $(this).has("b").attr("href").indexOf(".html"))
+                                    title_link: $(this).has("b").attr("href").slice(24, $(this).has("b").attr("href").indexOf(".html")),
+                                    artist: $(this).has("b").next().text(),
+                                    artist_link: "/artist/" + 
+                                    $(this).has("b").attr("href").slice(24, $(this).has("b").attr("href").indexOf(".html")).slice(8)
+                                        .slice(0, $(this).has("b").attr("href").slice(24, $(this).has("b").attr("href").indexOf(".html")).slice(8).indexOf("/"))
                                 })
                             }
                         })
