@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Axios from "axios"
 import { Link } from "react-router-dom"
 import { LetraContext } from '../AppContext'
+import Loader from "./Loader"
 
 class Lyrics extends Component {
 
@@ -32,10 +33,18 @@ class Lyrics extends Component {
 
     displayLyrics() {
         return <div>
-            <h4>{this.state.track_title} Lyrics</h4>
-            {this.state.lyrics.map((line, index) => (
-                <p key={index}>{(line.indexOf("~") >= 0 ? <b className="artist">{line}</b> : line)}</p>
-            ))}
+            {
+                this.state.lyrics.map((line, index) => (
+                    <p key={index}>
+                        {
+                            line.indexOf("[") >= 0 && line.indexOf("[?]") < 0
+                                ? <b className="artist">{line.replace("[", "*** ").replace("]", " ***")}</b>
+                                : line
+
+                        }
+                    </p>
+                ))
+            }
         </div>
     }
 
@@ -44,15 +53,15 @@ class Lyrics extends Component {
             <div className="lyrics">
                 {
                     this.state.loading ?
-                        <div className="loading">
-                            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                        <div>
+                            <h1>Loading Lyrics</h1>
+                            <Loader />
                         </div>
                         :
                         <div>
-                            <div>
-                                <h3><Link to={"/artist/" + this.state.artist}>{this.state.artist_name}</Link> : {this.state.track_title} </h3>
-                                {this.displayLyrics()}
-                            </div>
+                            <h1>
+                                <Link to={"/artist/" + this.state.artist}>{this.state.artist_name}</Link> : {this.state.track_title} </h1>
+                            {this.displayLyrics()}
                         </div>
                 }
             </div>
