@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Axios from "axios"
 import { Link } from "react-router-dom"
 import { LetraContext } from '../AppContext'
+import Loader from "./Loader"
 
 class Home extends Component {
 
@@ -25,49 +26,65 @@ class Home extends Component {
         })
     }
 
-    printAlbums = () => {
-        return this.state.hotalbums.map((album, index) => (
-            <div key={index}>
-                <b>album:
-                    <Link to={album.link}> <i>{album.album}</i></Link>
-                </b>
-                <br />
-                <b>artist: <i>{album.artist}</i></b>
-                <br />
-                <img src={album.artwork} alt={album.album} />
-                <hr />
-            </div>
-        ))
+    displayAlbums = () => {
+        return <div>
+            {
+                this.state.hotalbums.map((album, index) => (
+                    <div className="album single" key={index}>
+                        <img className="artwork" src={album.artwork} alt={album.album} />
+                        <div className="infos">
+                            <p className="number"><span>#</span>{index + 1}</p>
+                            <p className="artist"><Link to={album.link}>{album.artist}</Link></p>
+                            <p className="title">{album.album}</p>
+                        </div>
+                    </div>
+                ))
+            }
+            <div className="clear"></div>
+        </div>
     }
 
-    printSongs = () => {
-        return this.state.hotsongs.map((song, index) => (
-            <div key={index}>
-                <b>artist: <a href={song.link}> <i>{song.artist}</i></a></b>
-                <br />
-                <b>title: <i>{song.title}</i></b>
-                <hr />
-            </div>
-        ))
+    displaySongs = () => {
+        return <div>
+            {
+                this.state.hotsongs.map((song, index) => (
+                    <div className="song single" key={index}>
+                        <div className="infos">
+                            <p className="number"><span>#</span>{index + 1}</p>
+                            <p className="artist"><Link to={song.artist_link}>{song.artist}</Link></p>
+                            <p className="title"><Link to={song.title_link}>{song.title}</Link></p>
+                        </div>
+                    </div>
+                ))
+            }
+            <div className="clear"></div>
+        </div>
     }
 
     render() {
         return (
-            <div>
+            <div className="home">
                 {
                     this.state.loading ?
-                        <div className="loading">
-                            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                        <div>
+                            <div className="top10">
+                                <h1>Top 10 Most Searched Songs</h1>
+                                <Loader />
+                            </div>
+                            <div className="top10 albums">
+                                <h1>Top 10 Most Searched Albums</h1>
+                                <Loader />
+                            </div>
                         </div>
                         :
                         <div>
-                            <div>
-                                <h1>Hot Albums</h1>
-                                {this.printAlbums()}
+                            <div className="top10">
+                                <h1>Top 10 Most Searched Songs</h1>
+                                {this.displaySongs()}
                             </div>
-                            <div>
-                                <h1>Hot Songs</h1>
-                                {this.printSongs()}
+                            <div className="top10 albums">
+                                <h1>Top 10 Most Searched Albums</h1>
+                                {this.displayAlbums()}
                             </div>
                         </div>
                 }
