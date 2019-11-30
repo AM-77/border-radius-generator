@@ -24,17 +24,19 @@ class Search extends Component {
             })
     }
 
-    UNSAFE_componentWillReceiveProps(newProps) {
-        this.setState(state => ({ loading: true }))
-        Axios.get(this.context.base_url + "/search/" + newProps.match.params.looking_for)
-            .then((res) => {
-                this.setState(state => ({
-                    loading: false,
-                    result: res.data
-                }))
-            }).finally(() => {
-                this.displayResult()
-            })
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.looking_for !== prevProps.match.params.looking_for) {
+            this.setState(state => ({ loading: true }))
+            Axios.get(this.context.base_url + "/search/" + this.props.match.params.looking_for)
+                .then((res) => {
+                    this.setState(state => ({
+                        loading: false,
+                        result: res.data
+                    }))
+                }).finally(() => {
+                    this.displayResult()
+                })
+        }
     }
 
     displayResult = () => {

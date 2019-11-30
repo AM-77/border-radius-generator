@@ -25,17 +25,19 @@ class ListArtists extends Component {
             })
     }
 
-    UNSAFE_componentWillReceiveProps(newProps) {
-        this.setState(state => ({ loading: true }))
-        Axios.get(this.context.base_url + "/artists/" + newProps.match.params.artist)
-            .then((res) => {
-                this.setState(state => ({
-                    loading: false,
-                    artists: res.data.artists
-                }))
-            }).finally(() => {
-                this.displayArtists()
-            })
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.artist !== prevProps.match.params.artist) {
+            this.setState(state => ({ loading: true }))
+            Axios.get(this.context.base_url + "/artists/" + this.props.match.params.artist)
+                .then((res) => {
+                    this.setState(state => ({
+                        loading: false,
+                        artists: res.data.artists
+                    }))
+                }).finally(() => {
+                    this.displayArtists()
+                })
+        }
     }
 
     displayArtists = () =>
