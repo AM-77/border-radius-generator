@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Axios from "axios"
 import { Link } from "react-router-dom"
 import { LetraContext } from '../AppContext'
+import Loader from "./Loader"
+import NotFound from "./NotFound"
 
 class Artist extends Component {
 
@@ -26,48 +28,68 @@ class Artist extends Component {
         })
     }
 
-    displayAlbums() {
-        return this.state.albums.map((album, index) => (
-            <div key={index}>
+    displayAlbums = () =>
 
-                {
-                    (album.title !== "other songs") ?
-                        <div>
-                            <h3>title: <i>{album.title}</i></h3>
-                            <h5>year: <i>{album.year}</i></h5>
-                        </div>
-                        : <div><h4><i>{album.title}</i> : </h4></div>}
-                <div>
-                    <ul>
-                        {album.tracks.map((track, index) => (
-                            <li key={index}>
-                                <Link to={track.link}>
-                                    <h5>{track.title}</h5>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+        !this.state.albums
+            ?
+            <NotFound />
+            :
+            (<div>
+                <h1>{this.state.artist_name}</h1>
+                <div className="albums">
+                    {
+                        this.state.albums.length === 0
+                            ?
+                            <h4>Nothing Was Foud For This Artist</h4>
+                            :
+                            this.state.albums.map((album, index) => (
+                                <div className="album" key={index}>
+
+                                    {
+                                        (album.title !== "other songs")
+                                            ?
+                                            <div>
+                                                <h4>{album.title}<br />{album.year}</h4>
+                                            </div>
+                                            :
+                                            <div>
+                                                <h4>{album.title}</h4>
+                                            </div>
+                                    }
+                                    <div>
+                                        <ul>
+                                            {
+                                                album.tracks.map((track, index) => (
+                                                    <li key={index}>
+                                                        <Link to={track.link}>{track.title}</Link>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            ))
+                    }
                 </div>
-            </div>
-        ))
-    }
+            </div>)
+
 
     render() {
         return (
-            <div>
+            <div className="artist">
                 {
-                    this.state.loading ?
-                        <div className="loading">
-                            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    this.state.loading
+                        ?
+                        <div>
+                            <h1>Loading The Artist's Page</h1>
+                            <Loader />
                         </div>
                         :
-                        <div>
-                            <div>
-                                <h1>{this.state.artist_name}</h1>
-                                {this.displayAlbums()}
-                            </div>
-                        </div>
+                        this.displayAlbums()
+
+
                 }
+                <div className="clear"></div>
             </div>
         )
     }
