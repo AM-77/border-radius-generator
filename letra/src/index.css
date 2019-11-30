@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Economica&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
@@ -9,7 +11,8 @@
 *, *::after, *::before{
   padding: 0;
   margin: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+  outline: none 
 }
 
 html, body, div, span, applet, object, iframe,
@@ -132,6 +135,10 @@ html {
     font-size: 100%; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+}
+
+a{
+  text-decoration: none;
 }
 
 /**
@@ -373,10 +380,13 @@ textarea {
     padding: 0.2em 0;
 }
 
+.clear{
+  clear: both;
+}
 
 body {
   margin: 0;
-  font-family: "source sans pro", sans-serif;
+  font-family: "Alegreya Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -400,6 +410,15 @@ code {
   position: relative;
   width: 80px;
   height: 80px;
+}
+
+.lds-spinner img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: 27px;
+  top: 27px;
 }
 
 .lds-spinner div {
@@ -490,13 +509,18 @@ code {
 
 .nav-bar{
   display: block;
+  width: 100%;
   height: 60px;
   padding: 0 5%;
+  background: #fff;
   box-shadow: 0px -2px 5px #3c3c3c;
+  z-index: 1000;
+  position: fixed;
 }
 
 .nav-bar .logo{
   display: inline-block;
+  float: left;
 }
 
 .nav-bar .logo a img{
@@ -519,11 +543,32 @@ code {
   top: 7px;
 }
 
+.nav-bar .alphabets{
+  display: inline-block;
+  padding-top: 21px;
+  margin-left: 25px;
+}
+
+.nav-bar .alphabets a{
+  font-size: 22px;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  transform: color 250ms ease;
+  outline: none;
+  margin-left: 12px;
+}
+
+.nav-bar .alphabets a:hover{
+  color: #d44173
+}
+
 .nav-bar .searching-form{
   display: block;
   float: right;
   height: 100%;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .nav-bar .searching-form input{
@@ -534,8 +579,8 @@ code {
   border-radius: 2px;
   border: 1px solid #3c3c3c;
   text-indent: 10px;
-  font-size: 19px;
-  font-family: "source sans pro", sans-serif;
+  font-size: 16px;
+  font-family: "Alegreya Sans", sans-serif;
 }
 
 .nav-bar .searching-form button {
@@ -545,7 +590,7 @@ code {
   border: none;
   position: relative;
   left: -34px;
-  top: 3px;
+  top: 6px;
   padding: 7px;
   border-radius: 0 3px 3px 0;
   transition: background 250ms ease
@@ -560,4 +605,333 @@ code {
   fill: #F16E6C;
   width: 20px;
   height: 20px;
+}
+
+.wrapper{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.footer{
+  text-align: center;
+  font-size: 17px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.footer a{
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+  transform: color 250ms ease;
+}
+
+.footer a:hover{
+  color: #d44173
+}
+
+
+.home .top10{
+  display: block;
+  width: 100%;
+}
+
+.home .top10 h1{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 37px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.home .top10 .single{
+  display: block;
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.home .top10 .single.song{
+  width: 20%;
+}
+
+.home .top10 .single img{
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.home .top10 .single .infos{
+  color: #3c3c3c;
+}
+
+.home .top10 .single .infos .number{
+  font-family: Economica, Pacifico, sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+.home .top10 .single .infos .title,
+.home .top10 .single .infos .artist{
+  padding-top: 5px;
+  font-weight: 700
+}
+
+.home .top10 .single .infos .title span,
+.home .top10 .single .infos .artist span{
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.home .top10 .single .infos .title a,
+.home .top10 .single .infos .artist a{
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  transform: color 250ms ease;
+}
+
+.home .top10 .single .infos .title a:hover,
+.home .top10 .single .infos .artist a:hover{
+  color: #d44173
+}
+
+
+.search > h1{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize
+}
+
+.search > h1 span{
+  color: #F16E6C;
+}
+
+.search .results .result{
+  display: block;
+  width: 33.33%;
+  float: left;
+}
+
+.search .results h4{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 27px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize;
+  text-decoration: underline
+}
+
+.search .results p{
+  text-align: center;
+  line-height: 1.7;
+  font-weight: 700
+}
+
+.search .results p a{
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  transform: color 250ms ease;
+}
+
+.search .results p a:hover{
+  color: #d44173
+}
+
+
+.artist > div > h1{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize
+}
+
+.artist .albums{
+  column-count: 3;
+}
+
+.artist .albums .album{
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+.artist .albums h4{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 27px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize;
+  text-decoration: underline
+}
+
+.artist .albums li{
+  text-align: center;
+  line-height: 1.5
+}
+
+.artist .albums a{
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  transform: color 250ms ease;
+}
+
+.artist .albums a:hover{
+  color: #d44173
+}
+
+
+.lyrics > div > h1{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize
+}
+
+.lyrics > div a{
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  transform: color 250ms ease;
+}
+
+.lyrics > div a:hover{
+  color: #d44173
+}
+
+.lyrics p{
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #3c3c3c;
+}
+
+.lyrics p b{
+  display: inline-block;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  margin: 25px 0;
+}
+
+
+
+.artists > div > h1{
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize
+}
+
+.artists > div > h1 span {
+  color: #F16E6C;
+}
+
+.artists .artists-list .artist-item{
+  display: block;
+  width: 25%;
+  float: left;
+  text-align: center;
+  line-height: 1.5
+}
+
+.artists .artists-list a{
+  display: block;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  transform: color 250ms ease;
+}
+
+.artists .artists-list a:hover{
+  color: #d44173
+}
+
+.not-found {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 60px
+}
+
+.not-found p{
+  font-size: 170px;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto
+}
+
+.not-found h1 {
+  text-align: center;
+  font-family: Economica, Pacifico, sans-serif;
+  color: #3c3c3c;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-transform: capitalize;
+}
+
+.not-found a{
+  display: block;
+  font-family: "Alegreya sans", Economica, Pacifico, sans-serif;
+  color: #F16E6C;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  transform: color 250ms ease;
+}
+
+.not-found a:hover{
+  color: #d44173
 }
