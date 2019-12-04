@@ -573,32 +573,29 @@ code {
 
 .nav-bar .searching-form input{
   display: inline-block;
-  height: 35px;
+  height: 36px;
   width: 350px;
   background: transparent;
-  border-radius: 2px;
+  border-radius: 20px;
   border: 1px solid #3c3c3c;
   text-indent: 10px;
   font-size: 16px;
   font-family: "Alegreya Sans", sans-serif;
+  padding-right: 40px;
 }
 
 .nav-bar .searching-form button {
   display: inline-block;
-  background: #3c3c3c;
+  background: #ffffff;
   cursor: pointer;
   border: none;
   position: relative;
-  left: -34px;
+  left: -39px;
   top: 6px;
   padding: 7px;
-  border-radius: 0 3px 3px 0;
-  transition: background 250ms ease
+  border-radius: 20px;
 }
 
-.nav-bar .searching-form button:hover{
-  background: #121212
-}
 
 .nav-bar .searching-form button svg{
   display: block;
