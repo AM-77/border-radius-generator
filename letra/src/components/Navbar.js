@@ -16,10 +16,12 @@ export default class Navbar extends Component {
     }
 
     looking_for = () => {
-        this.setState(state => ({
-            looking_for: document.querySelector("input.search-input").value,
-            searching: true
-        }))
+        let to_find = document.querySelector("input.search-input").value
+        if (to_find !== "")
+            this.setState(state => ({
+                looking_for: to_find,
+                searching: true
+            }))
     }
 
     displayAlphabets = () => {
