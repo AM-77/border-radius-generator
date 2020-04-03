@@ -5,20 +5,7 @@ import { addTodo, deleteTodo, sorteTodo, checkTodo } from "./../todoStore"
 
 import dataStore from "./../todoStore"
 
-const mapStateToProps = (todoStore) => ({
-    todoList: todoStore.todo
-})
-
-const mapDispatchToProps = {
-    addTodo: addTodo,
-    deleteTodo: deleteTodo,
-    sorteTodo: sorteTodo,
-    checkTodo: checkTodo
-}
-
-const connectStore = connect(mapStateToProps, mapDispatchToProps);
-
-const TodoApp = connectStore(class extends Component {
+class TodoApp extends Component {
 
     componentDidMount() {
         this.props.sorteTodo()
@@ -71,6 +58,15 @@ const TodoApp = connectStore(class extends Component {
             </div>
         )
     }
-})
+}
 
-export default TodoApp
+const mapStateToProps = (todoStore) => ({ todoList: todoStore.todo })
+
+const mapDispatchToProps = {
+    addTodo: addTodo,
+    deleteTodo: deleteTodo,
+    sorteTodo: sorteTodo,
+    checkTodo: checkTodo
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
