@@ -43,10 +43,11 @@ app.get("/artists/:first_letter", (req, res) => {
 })
 
 app.get("/artist/:artist_name", (req, res, next) => {
-    if (req.params.artist_name){
-        
-        if(!isNaN(req.params.artist_name.slice(0, 1))){
-            scrap(`${BASE_LINK}/19/${req.params.artist_name}.html`, types.ARTIST)
+    const { artist_name } = req.params
+
+    if (artist_name){
+        if(!isNaN(parseInt(artist_name.slice(0, 1)))){
+            scrap(`${BASE_LINK}/19/${artist_name}.html`, types.ARTIST)
             .then((result) => {
                 if (Object.keys(result).length === 0 && result.constructor === Object)
                     res.status(200).json({
@@ -56,7 +57,7 @@ app.get("/artist/:artist_name", (req, res, next) => {
                     res.status(200).json(result).end()
             })
         }else{
-            scrap(`${BASE_LINK}/${req.params.artist_name.slice(0,1)}/${req.params.artist_name}.html`, types.ARTIST)
+            scrap(`${BASE_LINK}/${artist_name.slice(0,1)}/${artist_name}.html`, types.ARTIST)
             .then((result) => {
                 if (Object.keys(result).length === 0 && result.constructor === Object)
                     res.status(200).json({

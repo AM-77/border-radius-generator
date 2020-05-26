@@ -37,7 +37,8 @@ module.exports = (url, type) => {
                             result.artist = $(this).text().replace("Lyrics", "").trim()
                         })
 
-                        $('#listAlbum div, #listAlbum a').filter(function () {
+                        $('.container.main-page div').filter(function () {
+
                             $(this).each(function () {
                                 if ($(this).hasClass("album")) {
                                     result.albums.push({
@@ -47,12 +48,16 @@ module.exports = (url, type) => {
                                         year: ($(this).text() !== "other songs:") ? $(this).text().slice($(this).text().indexOf("(") + 1, $(this).text().indexOf(")")) : null,
                                         tracks: []
                                     })
-                                } else {
-                                    result.albums[(result.albums.length - 1)].tracks.push({
-                                        title: $(this).text(),
-                                        link: `/lyrics${$(this).attr("href").slice(9, -5)}`
-                                    })
+                                }
 
+                                if ($(this).hasClass("listalbum-item")) {
+                                    if ( result.albums.length === 0 ) {
+                                        result.albums.push({ title: "unknown", year: "unknown", tracks: [] })
+                                    }
+                                    result.albums[(result.albums.length - 1)].tracks.push({
+                                        title: $(this).find("a").text(),
+                                        link: `/lyrics${$(this).find("a").attr("href").slice(9, -5)}`
+                                    })
                                 }
                             })
                         })
