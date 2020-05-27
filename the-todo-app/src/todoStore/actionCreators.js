@@ -32,4 +32,3 @@ export const checkTodo = (todoId) => {
         payload: todoId
     }
 }
-

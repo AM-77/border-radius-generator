@@ -3,8 +3,6 @@ import TodoList from "./TodoList"
 import { connect } from "react-redux"
 import { addTodo, deleteTodo, sorteTodo, checkTodo } from "./../todoStore"
 
-import dataStore from "./../todoStore"
-
 class TodoApp extends Component {
 
     componentDidMount() {
