@@ -6,7 +6,7 @@
 
 ### the-todo-app
 
-A  progressive to do app with react & redux. [the-todo-app](https://am-77.github.io/the-todo-app/)
+A todo app with react & redux. [the-todo-app](https://am-77.github.io/the-todo-app/)
 
 ### letra
 
