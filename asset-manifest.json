@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/letra/static/css/main.62143866.chunk.css",
-    "main.js": "/letra/static/js/main.eab8d439.chunk.js",
-    "main.js.map": "/letra/static/js/main.eab8d439.chunk.js.map",
-    "runtime-main.js": "/letra/static/js/runtime-main.41e6001c.js",
-    "runtime-main.js.map": "/letra/static/js/runtime-main.41e6001c.js.map",
-    "static/js/2.d710628d.chunk.js": "/letra/static/js/2.d710628d.chunk.js",
-    "static/js/2.d710628d.chunk.js.map": "/letra/static/js/2.d710628d.chunk.js.map",
-    "index.html": "/letra/index.html",
-    "precache-manifest.e92991a9b12236699945750293ba401b.js": "/letra/precache-manifest.e92991a9b12236699945750293ba401b.js",
-    "service-worker.js": "/letra/service-worker.js",
-    "static/css/main.62143866.chunk.css.map": "/letra/static/css/main.62143866.chunk.css.map",
-    "static/media/loupe.76e148cd.svg": "/letra/static/media/loupe.76e148cd.svg"
+    "main.css": "/the-todo-app/static/css/main.58877117.chunk.css",
+    "main.js": "/the-todo-app/static/js/main.eaadcd1a.chunk.js",
+    "main.js.map": "/the-todo-app/static/js/main.eaadcd1a.chunk.js.map",
+    "runtime-main.js": "/the-todo-app/static/js/runtime-main.2586b4ca.js",
+    "runtime-main.js.map": "/the-todo-app/static/js/runtime-main.2586b4ca.js.map",
+    "static/css/2.77dcd65d.chunk.css": "/the-todo-app/static/css/2.77dcd65d.chunk.css",
+    "static/js/2.6c90934b.chunk.js": "/the-todo-app/static/js/2.6c90934b.chunk.js",
+    "static/js/2.6c90934b.chunk.js.map": "/the-todo-app/static/js/2.6c90934b.chunk.js.map",
+    "index.html": "/the-todo-app/index.html",
+    "precache-manifest.2c0ba13b5e19e0f4d04e6ddab16ab616.js": "/the-todo-app/precache-manifest.2c0ba13b5e19e0f4d04e6ddab16ab616.js",
+    "service-worker.js": "/the-todo-app/service-worker.js",
+    "static/css/2.77dcd65d.chunk.css.map": "/the-todo-app/static/css/2.77dcd65d.chunk.css.map",
+    "static/css/main.58877117.chunk.css.map": "/the-todo-app/static/css/main.58877117.chunk.css.map",
+    "static/media/index.css": "/the-todo-app/static/media/RopaSans-Regular.0eadef57.ttf",
+    "static/media/all.min.css": "/the-todo-app/static/media/fa-solid-900.ec763292.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.41e6001c.js",
-    "static/js/2.d710628d.chunk.js",
-    "static/css/main.62143866.chunk.css",
-    "static/js/main.eab8d439.chunk.js"
+    "static/js/runtime-main.2586b4ca.js",
+    "static/css/2.77dcd65d.chunk.css",
+    "static/js/2.6c90934b.chunk.js",
+    "static/css/main.58877117.chunk.css",
+    "static/js/main.eaadcd1a.chunk.js"
   ]
 }
