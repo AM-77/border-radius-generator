@@ -1,13 +1,17 @@
 import React, { Component, ChangeEvent } from 'react'
 
-interface IProps { onRangeChange: (value: number) => void }
+interface IProps { 
+  onRangeChange: (value: number) => void
+  value: number
+}
 interface IState { value: number }
 
 export default class InputRange extends Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props)
-    this.state = { value: 0 }
+    const { value } = this.props
+    this.state = { value }
   }
 
   onRangeChange = (e: ChangeEvent<HTMLInputElement>) => {
