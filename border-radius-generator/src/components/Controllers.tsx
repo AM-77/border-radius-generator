@@ -42,19 +42,21 @@ export default class Controllers extends Component<IProps, IState> {
       <div className="controllers-container">
         <div className="dimensions">
           <h2>Dimensions</h2>
-          <div className="dim">
-            <p>width: </p>
-            <input type="number" min="0" value={width} onChange={(e) => this.onDimensionChange(e, "width")} />
-          </div>
-          <div className="dim">
+          <div className="dims">
+            <div className="dim">
+              <p>width: </p>
+              <input type="number" min="0" value={width} onChange={(e) => this.onDimensionChange(e, "width")} />
+            </div>
+            <div className="dim">
             <p>height: </p>
             <input type="number" min="0" value={height} onChange={(e) => this.onDimensionChange(e, "height")} />
+          </div>
           </div>
         </div>
         <div className="border-radius">
           <p>
-            <span className="prop">border-radius :</span> 
-            <span className="value">{ `${topOp}% ${top}% ${bottomOp}% ${bottom}% / ${left}% ${rightOp}% ${right}% ${leftOp}%` }</span>
+            <span className="prop">border-radius: </span> 
+            <span className="value">{`${topOp}% ${top}% ${bottomOp}% ${bottom}% / ${left}% ${rightOp}% ${right}% ${leftOp}%;`}</span>
           </p>
           <div className="copy">
             <button>
