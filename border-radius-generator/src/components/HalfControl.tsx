@@ -22,10 +22,10 @@ export default class HalfControl extends Component<IProps> {
     return (
       <div className="box-container">
         <div style={{ width, height }}  className="box">
-          <div className="left" style={{ width: height }} ><InputRange onRangeChange={(value) => onRangeChange('left', value)} /></div>
-          <div className="top" style={{ width: width }} ><InputRange onRangeChange={(value) => onRangeChange('top', value)} /></div>
-          <div className="right" style={{ width: height }} ><InputRange onRangeChange={(value) => onRangeChange('right', value)} /></div>
-          <div className="bottom" style={{ width: width }} ><InputRange onRangeChange={(value) => onRangeChange('bottom', value)} /></div>
+          <div className="left" style={{ width: height }} ><InputRange value={left} onRangeChange={(value) => onRangeChange('left', value)} /></div>
+          <div className="top" style={{ width: width }} ><InputRange value={top} onRangeChange={(value) => onRangeChange('top', value)} /></div>
+          <div className="right" style={{ width: height }} ><InputRange value={right} onRangeChange={(value) => onRangeChange('right', value)} /></div>
+          <div className="bottom" style={{ width: width }} ><InputRange value={bottom} onRangeChange={(value) => onRangeChange('bottom', value)} /></div>
           <div className="inner-box" style={{ borderRadius: `${topOp}% ${top}% ${bottomOp}% ${bottom}% / ${left}% ${rightOp}% ${right}% ${leftOp}%` }} ></div>
         </div>
       </div>
