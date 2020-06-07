@@ -12,6 +12,7 @@ interface IProps {
   rightOp: number
   right: number
   leftOp: number
+  onControlRangeChange: (isHalf: boolean) => void
 }
 
 interface IState {
@@ -34,6 +35,11 @@ export default class Controllers extends Component<IProps, IState> {
     this.setState((state) => ({ ...state, [prop]: value}), () => onDimensionChange(value , prop))
   }
 
+  onControlRangeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { onControlRangeChange } = this.props
+    onControlRangeChange(!e.target.checked)
+  }
+
   render() {
     const { width, height } = this.state
     const { topOp, top, bottomOp, bottom, left, rightOp, right, leftOp } = this.props
@@ -42,6 +48,10 @@ export default class Controllers extends Component<IProps, IState> {
       <div className="controllers-container">
         <div className="dimensions">
           <h2>Dimensions</h2>
+          <div className="control">
+            <span>Full Control</span>
+            <input type="checkbox" onChange={this.onControlRangeChange} />
+          </div>
           <div className="dims">
             <div className="dim">
               <p>width: </p>
