@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import HalfControl from './components/HalfControl'
 import FullControl from './components/FullControl'
 import Controllers from './components/Controllers'
+import Footer from './components/Footer'
 
 interface IState {
   width: number
@@ -110,7 +111,7 @@ export default class App extends Component <unknown, IState> {
               bottomOp={bottomOp} /> 
           </div>
           <div className="footer">
-
+            <Footer />
           </div>
         </div>
       </div>
