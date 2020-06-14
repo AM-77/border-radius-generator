@@ -6,7 +6,7 @@
   --dark: #1d1d2d;
   --unicorn: linear-gradient(70deg, rgba(241, 39, 39, 1) 0%, rgba(236, 122, 40, 1) 5%, rgba(236, 159, 40, 1) 10%, rgba(236, 188, 40, 1) 15%, rgba(236, 207, 40, 1) 20%, rgba(214, 224, 40, 1) 25%, rgba(199, 236, 40, 1) 30%, rgba(120, 236, 40, 1) 35%, rgba(67, 236, 40, 1) 40%, rgba(54, 236, 91, 1) 45%, rgba(40, 236, 142, 1) 50%, rgba(40, 236, 198, 1) 55%, rgba(40, 215, 236, 1) 60%, rgba(38, 184, 231, 1) 65%, rgba(40, 139, 236, 1) 70%, rgba(75, 84, 236, 1) 75%, rgba(155, 40, 236, 1) 80%, rgba(199, 40, 213, 1) 85%, rgba(236, 40, 199, 1) 90%, rgba(238, 40, 134, 1) 95%, rgba(241, 39, 39, 1) 100%);
   --bg-track: #fafbfc;
-  --main:  rgba(40, 236, 142, 1);
+  --main: #80CBC4;
 }
 
 * {
@@ -17,7 +17,7 @@
 
 html,
 body {
-  background: linear-gradient(180deg, #160b46, #585894);
+  background: linear-gradient(180deg, #000000, #6357ff);
   font-family: "Roboto";
   color: var(--light);
 }
