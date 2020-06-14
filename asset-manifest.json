@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/the-todo-app/static/css/main.58877117.chunk.css",
-    "main.js": "/the-todo-app/static/js/main.eaadcd1a.chunk.js",
-    "main.js.map": "/the-todo-app/static/js/main.eaadcd1a.chunk.js.map",
-    "runtime-main.js": "/the-todo-app/static/js/runtime-main.2586b4ca.js",
-    "runtime-main.js.map": "/the-todo-app/static/js/runtime-main.2586b4ca.js.map",
-    "static/css/2.77dcd65d.chunk.css": "/the-todo-app/static/css/2.77dcd65d.chunk.css",
-    "static/js/2.6c90934b.chunk.js": "/the-todo-app/static/js/2.6c90934b.chunk.js",
-    "static/js/2.6c90934b.chunk.js.map": "/the-todo-app/static/js/2.6c90934b.chunk.js.map",
-    "index.html": "/the-todo-app/index.html",
-    "precache-manifest.2c0ba13b5e19e0f4d04e6ddab16ab616.js": "/the-todo-app/precache-manifest.2c0ba13b5e19e0f4d04e6ddab16ab616.js",
-    "service-worker.js": "/the-todo-app/service-worker.js",
-    "static/css/2.77dcd65d.chunk.css.map": "/the-todo-app/static/css/2.77dcd65d.chunk.css.map",
-    "static/css/main.58877117.chunk.css.map": "/the-todo-app/static/css/main.58877117.chunk.css.map",
-    "static/media/index.css": "/the-todo-app/static/media/RopaSans-Regular.0eadef57.ttf",
-    "static/media/all.min.css": "/the-todo-app/static/media/fa-solid-900.ec763292.svg"
+    "main.css": "/border-radius-generator/static/css/main.b03e813d.chunk.css",
+    "main.js": "/border-radius-generator/static/js/main.dbdc02c8.chunk.js",
+    "main.js.map": "/border-radius-generator/static/js/main.dbdc02c8.chunk.js.map",
+    "runtime-main.js": "/border-radius-generator/static/js/runtime-main.007d7119.js",
+    "runtime-main.js.map": "/border-radius-generator/static/js/runtime-main.007d7119.js.map",
+    "static/js/2.328efcfe.chunk.js": "/border-radius-generator/static/js/2.328efcfe.chunk.js",
+    "static/js/2.328efcfe.chunk.js.map": "/border-radius-generator/static/js/2.328efcfe.chunk.js.map",
+    "index.html": "/border-radius-generator/index.html",
+    "precache-manifest.d42ac3d87f5bd412dede0162fe9f9f74.js": "/border-radius-generator/precache-manifest.d42ac3d87f5bd412dede0162fe9f9f74.js",
+    "service-worker.js": "/border-radius-generator/service-worker.js",
+    "static/css/main.b03e813d.chunk.css.map": "/border-radius-generator/static/css/main.b03e813d.chunk.css.map",
+    "static/js/2.328efcfe.chunk.js.LICENSE.txt": "/border-radius-generator/static/js/2.328efcfe.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/border-radius-generator/static/media/bg.bf73825b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2586b4ca.js",
-    "static/css/2.77dcd65d.chunk.css",
-    "static/js/2.6c90934b.chunk.js",
-    "static/css/main.58877117.chunk.css",
-    "static/js/main.eaadcd1a.chunk.js"
+    "static/js/runtime-main.007d7119.js",
+    "static/js/2.328efcfe.chunk.js",
+    "static/css/main.b03e813d.chunk.css",
+    "static/js/main.dbdc02c8.chunk.js"
   ]
 }
