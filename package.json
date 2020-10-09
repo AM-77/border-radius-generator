@@ -29,7 +29,22 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint:check": "eslint '*/**/*.{js,ts,tsx}' --ignore-path ./.eslintignore --color",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --ignore-path ./.eslintignore --color --fix",
+    "format:check": "prettier '*/**/*.{ts,tsx,css,json}' --check --ignore-path ./.prettierignore",
+    "format:fix": "prettier '*/**/*.{ts,tsx,css,json}' --write --ignore-path ./.prettierignore"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn lint:fix",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,5 +60,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-airbnb-typescript-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "prettier": "^2.1.2"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "typescript",
+    "border-radius",
+    "generator"
+  ]
 }
