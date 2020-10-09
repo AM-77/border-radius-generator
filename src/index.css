@@ -4,9 +4,32 @@
   --black: #111111;
   --light: #f1f2f3;
   --dark: #1d1d2d;
-  --unicorn: linear-gradient(70deg, rgba(241, 39, 39, 1) 0%, rgba(236, 122, 40, 1) 5%, rgba(236, 159, 40, 1) 10%, rgba(236, 188, 40, 1) 15%, rgba(236, 207, 40, 1) 20%, rgba(214, 224, 40, 1) 25%, rgba(199, 236, 40, 1) 30%, rgba(120, 236, 40, 1) 35%, rgba(67, 236, 40, 1) 40%, rgba(54, 236, 91, 1) 45%, rgba(40, 236, 142, 1) 50%, rgba(40, 236, 198, 1) 55%, rgba(40, 215, 236, 1) 60%, rgba(38, 184, 231, 1) 65%, rgba(40, 139, 236, 1) 70%, rgba(75, 84, 236, 1) 75%, rgba(155, 40, 236, 1) 80%, rgba(199, 40, 213, 1) 85%, rgba(236, 40, 199, 1) 90%, rgba(238, 40, 134, 1) 95%, rgba(241, 39, 39, 1) 100%);
+  --unicorn: linear-gradient(
+    70deg,
+    rgba(241, 39, 39, 1) 0%,
+    rgba(236, 122, 40, 1) 5%,
+    rgba(236, 159, 40, 1) 10%,
+    rgba(236, 188, 40, 1) 15%,
+    rgba(236, 207, 40, 1) 20%,
+    rgba(214, 224, 40, 1) 25%,
+    rgba(199, 236, 40, 1) 30%,
+    rgba(120, 236, 40, 1) 35%,
+    rgba(67, 236, 40, 1) 40%,
+    rgba(54, 236, 91, 1) 45%,
+    rgba(40, 236, 142, 1) 50%,
+    rgba(40, 236, 198, 1) 55%,
+    rgba(40, 215, 236, 1) 60%,
+    rgba(38, 184, 231, 1) 65%,
+    rgba(40, 139, 236, 1) 70%,
+    rgba(75, 84, 236, 1) 75%,
+    rgba(155, 40, 236, 1) 80%,
+    rgba(199, 40, 213, 1) 85%,
+    rgba(236, 40, 199, 1) 90%,
+    rgba(238, 40, 134, 1) 95%,
+    rgba(241, 39, 39, 1) 100%
+  );
   --bg-track: #fafbfc;
-  --main: #80CBC4;
+  --main: #80cbc4;
 }
 
 * {
@@ -18,7 +41,7 @@
 html,
 body {
   background: linear-gradient(180deg, #000000, #6357ff);
-  font-family: "Roboto";
+  font-family: 'Roboto';
   color: var(--light);
 }
 
@@ -105,7 +128,7 @@ body {
   max-width: 400px;
   width: 100%;
   overflow: hidden;
-  font-weight: 400
+  font-weight: 400;
 }
 
 .main .controllers-container h2 {
@@ -135,7 +158,7 @@ body {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .main .controllers-container .control input:after {
@@ -146,7 +169,7 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 30% 70% 56% 44% / 31% 36% 64% 69%;
-  transition: all 250ms ease
+  transition: all 250ms ease;
 }
 
 .main .controllers-container .control input:checked:after {
@@ -183,7 +206,7 @@ body {
   height: 32px;
   background: var(--black);
   color: var(--light);
-  font-family: "Fira Code";
+  font-family: 'Fira Code';
   font-weight: 700;
   width: 60px;
   text-align: right;
@@ -209,7 +232,7 @@ body {
   padding: 5px 10px;
   justify-content: space-between;
   align-items: center;
-  font-family: "Fira Code";
+  font-family: 'Fira Code';
   border-radius: 3px;
   box-shadow: 0px 0px 15px -5px var(--black);
 }
@@ -242,11 +265,11 @@ body {
   padding: 5px;
   cursor: pointer;
   outline: none;
-  transition: all 250ms ease
+  transition: all 250ms ease;
 }
 
 .main .controllers-container .border-radius div button:hover {
-  background: var(--main)
+  background: var(--main);
 }
 
 .box {
@@ -254,7 +277,7 @@ body {
   margin: 50px;
 }
 
-.box>div>input {
+.box > div > input {
   position: absolute;
 }
 
@@ -325,7 +348,7 @@ body {
 }
 
 .box .inner-box::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -2px;
   left: -2px;
@@ -351,24 +374,24 @@ body {
   }
 }
 
-input[type=range] {
+input[type='range'] {
   -webkit-appearance: none;
   margin: 15px 0;
   width: 100%;
 }
 
-input[type=range]:focus {
+input[type='range']:focus {
   outline: none;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
   background: var(--bg-track);
 }
 
-input[type=range]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   border: 1px solid var(--black);
   height: 16px;
   width: 16px;
@@ -379,11 +402,11 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -6px;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type='range']:focus::-webkit-slider-runnable-track {
   background: var(--main);
 }
 
-input[type=range]::-moz-range-track {
+input[type='range']::-moz-range-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
@@ -391,7 +414,7 @@ input[type=range]::-moz-range-track {
   border: 0.2px solid var(--black);
 }
 
-input[type=range]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   border: 1px solid var(--black);
   height: 36px;
   width: 16px;
@@ -400,7 +423,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-input[type=range]::-ms-track {
+input[type='range']::-ms-track {
   width: 100%;
   height: 8.4px;
   cursor: pointer;
@@ -410,19 +433,19 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
-input[type=range]::-ms-fill-lower {
+input[type='range']::-ms-fill-lower {
   background: var(--bg-track);
   border: 0.2px solid var(--black);
   border-radius: 2.6px;
 }
 
-input[type=range]::-ms-fill-upper {
+input[type='range']::-ms-fill-upper {
   background: var(--bg-track);
   border: 0.2px solid var(--black);
   border-radius: 2.6px;
 }
 
-input[type=range]::-ms-thumb {
+input[type='range']::-ms-thumb {
   border: 1px solid var(--black);
   height: 36px;
   width: 16px;
@@ -431,11 +454,11 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+input[type='range']:focus::-ms-fill-lower {
   background: var(--bg-track);
 }
 
-input[type=range]:focus::-ms-fill-upper {
+input[type='range']:focus::-ms-fill-upper {
   background: var(--bg-focus);
 }
 
@@ -445,7 +468,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .footer p {
   text-align: center;
-  font-size: 14px
+  font-size: 14px;
 }
 
 .footer p a {
@@ -457,5 +480,5 @@ input[type=range]:focus::-ms-fill-upper {
 .footer p span {
   font-size: 13px;
   font-weight: 700;
-  color: var(--main)
+  color: var(--main);
 }

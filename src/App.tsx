@@ -1,28 +1,27 @@
-import React, { Component } from 'react'
-import HalfControl from './components/HalfControl'
-import FullControl from './components/FullControl'
-import Controllers from './components/Controllers'
-import Footer from './components/Footer'
+import React, { Component } from 'react';
+import HalfControl from './components/HalfControl';
+import FullControl from './components/FullControl';
+import Controllers from './components/Controllers';
+import Footer from './components/Footer';
 
 interface IState {
-  width: number
-  height: number
-  left: number
-  leftOp: number
-  top: number
-  topOp: number
-  right: number
-  rightOp: number
-  bottom: number
-  bottomOp: number
-  isHalf: boolean
+  width: number;
+  height: number;
+  left: number;
+  leftOp: number;
+  top: number;
+  topOp: number;
+  right: number;
+  rightOp: number;
+  bottom: number;
+  bottomOp: number;
+  isHalf: boolean;
 }
 
-export default class App extends Component <unknown, IState> {
-
-  constructor (props: unknown) {
-    super(props)
-    this.state = { 
+export default class App extends Component<unknown, IState> {
+  constructor(props: unknown) {
+    super(props);
+    this.state = {
       width: 200,
       height: 200,
       left: 71,
@@ -33,33 +32,62 @@ export default class App extends Component <unknown, IState> {
       rightOp: 62,
       bottom: 66,
       bottomOp: 34,
-      isHalf: true
-    }
+      isHalf: true,
+    };
   }
 
-  onDimensionChange = (value: number , prop: string) => {
-    this.setState((state) => ({...state, [prop]: value}))
-  }
+  onDimensionChange = (value: number, prop: string) => {
+    this.setState((state) => ({ ...state, [prop]: value }));
+  };
 
   onControlRangeChange = (isHalf: boolean) => {
-    this.setState({ isHalf })
-  }
+    this.setState({ isHalf });
+  };
 
-  onHalfControlRangeChange = (border: 'left' | 'top' | 'right' | 'bottom' , value: number) => {
-    this.setState((state) => ({ ...state, [border]: value, [border + "Op"] : 100 - value  }))
-  }
+  onHalfControlRangeChange = (
+    border: 'left' | 'top' | 'right' | 'bottom',
+    value: number,
+  ) => {
+    this.setState((state) => ({
+      ...state,
+      [border]: value,
+      [`${border}Op`]: 100 - value,
+    }));
+  };
 
-  onFullControlRangeChange = (border: 'left' | 'top' | 'right' | 'bottom' | 'leftOp' | 'topOp' | 'rightOp' | 'bottomOp' , value: number) => {
-    this.setState((state) => ({ ...state, [border]: value }))
-  }
+  onFullControlRangeChange = (
+    border:
+      | 'left'
+      | 'top'
+      | 'right'
+      | 'bottom'
+      | 'leftOp'
+      | 'topOp'
+      | 'rightOp'
+      | 'bottomOp',
+    value: number,
+  ) => {
+    this.setState((state) => ({ ...state, [border]: value }));
+  };
 
   render() {
-    const { width, height, left, leftOp, top, topOp, right, rightOp, bottom, bottomOp, isHalf } = this.state
- 
-    
-    return ( 
+    const {
+      width,
+      height,
+      left,
+      leftOp,
+      top,
+      topOp,
+      right,
+      rightOp,
+      bottom,
+      bottomOp,
+      isHalf,
+    } = this.state;
+
+    return (
       <div className="container">
-        <div className="layer"></div>
+        <div className="layer" />
         <div className="off-layer">
           <div className="desc">
             <h1>border radius generator</h1>
@@ -67,11 +95,10 @@ export default class App extends Component <unknown, IState> {
           </div>
           <div className="main">
             <div className="control">
-              {
-                isHalf ?
-                <HalfControl 
+              {isHalf ? (
+                <HalfControl
                   onRangeChange={this.onHalfControlRangeChange}
-                  width={width} 
+                  width={width}
                   height={height}
                   left={left}
                   leftOp={leftOp}
@@ -80,11 +107,12 @@ export default class App extends Component <unknown, IState> {
                   right={right}
                   rightOp={rightOp}
                   bottom={bottom}
-                  bottomOp={bottomOp} />
-                :
-                <FullControl 
+                  bottomOp={bottomOp}
+                />
+              ) : (
+                <FullControl
                   onRangeChange={this.onFullControlRangeChange}
-                  width={width} 
+                  width={width}
                   height={height}
                   left={left}
                   leftOp={leftOp}
@@ -93,13 +121,14 @@ export default class App extends Component <unknown, IState> {
                   right={right}
                   rightOp={rightOp}
                   bottom={bottom}
-                  bottomOp={bottomOp} />
-              }
+                  bottomOp={bottomOp}
+                />
+              )}
             </div>
-            <Controllers 
-              onDimensionChange={this.onDimensionChange} 
+            <Controllers
+              onDimensionChange={this.onDimensionChange}
               onControlRangeChange={this.onControlRangeChange}
-              width={width} 
+              width={width}
               height={height}
               left={left}
               leftOp={leftOp}
@@ -108,13 +137,14 @@ export default class App extends Component <unknown, IState> {
               right={right}
               rightOp={rightOp}
               bottom={bottom}
-              bottomOp={bottomOp} /> 
+              bottomOp={bottomOp}
+            />
           </div>
           <div className="footer">
             <Footer />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
