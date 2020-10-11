@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/border-radius-generator/static/css/main.b03e813d.chunk.css",
-    "main.js": "/border-radius-generator/static/js/main.dbdc02c8.chunk.js",
-    "main.js.map": "/border-radius-generator/static/js/main.dbdc02c8.chunk.js.map",
+    "main.css": "/border-radius-generator/static/css/main.130041d7.chunk.css",
+    "main.js": "/border-radius-generator/static/js/main.4e0b4fdf.chunk.js",
+    "main.js.map": "/border-radius-generator/static/js/main.4e0b4fdf.chunk.js.map",
     "runtime-main.js": "/border-radius-generator/static/js/runtime-main.007d7119.js",
     "runtime-main.js.map": "/border-radius-generator/static/js/runtime-main.007d7119.js.map",
-    "static/js/2.328efcfe.chunk.js": "/border-radius-generator/static/js/2.328efcfe.chunk.js",
-    "static/js/2.328efcfe.chunk.js.map": "/border-radius-generator/static/js/2.328efcfe.chunk.js.map",
+    "static/js/2.125cdffd.chunk.js": "/border-radius-generator/static/js/2.125cdffd.chunk.js",
+    "static/js/2.125cdffd.chunk.js.map": "/border-radius-generator/static/js/2.125cdffd.chunk.js.map",
     "index.html": "/border-radius-generator/index.html",
-    "precache-manifest.d42ac3d87f5bd412dede0162fe9f9f74.js": "/border-radius-generator/precache-manifest.d42ac3d87f5bd412dede0162fe9f9f74.js",
+    "precache-manifest.feb542b9d842f3e0d71a93b25ab1b77a.js": "/border-radius-generator/precache-manifest.feb542b9d842f3e0d71a93b25ab1b77a.js",
     "service-worker.js": "/border-radius-generator/service-worker.js",
-    "static/css/main.b03e813d.chunk.css.map": "/border-radius-generator/static/css/main.b03e813d.chunk.css.map",
-    "static/js/2.328efcfe.chunk.js.LICENSE.txt": "/border-radius-generator/static/js/2.328efcfe.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/border-radius-generator/static/media/bg.bf73825b.png"
+    "static/css/main.130041d7.chunk.css.map": "/border-radius-generator/static/css/main.130041d7.chunk.css.map",
+    "static/js/2.125cdffd.chunk.js.LICENSE.txt": "/border-radius-generator/static/js/2.125cdffd.chunk.js.LICENSE.txt",
+    "static/media/copied.svg": "/border-radius-generator/static/media/copied.12bcffa3.svg",
+    "static/media/copy.svg": "/border-radius-generator/static/media/copy.1d5258e4.svg",
+    "static/media/index.css": "/border-radius-generator/static/media/footer-bg.311630a6.svg",
+    "static/media/github.svg": "/border-radius-generator/static/media/github.9692007a.svg",
+    "static/media/hero-bg.svg": "/border-radius-generator/static/media/hero-bg.32ff8116.svg",
+    "static/media/linkedin.svg": "/border-radius-generator/static/media/linkedin.d68b3a56.svg",
+    "static/media/twitter.svg": "/border-radius-generator/static/media/twitter.874f59ea.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.007d7119.js",
-    "static/js/2.328efcfe.chunk.js",
-    "static/css/main.b03e813d.chunk.css",
-    "static/js/main.dbdc02c8.chunk.js"
+    "static/js/2.125cdffd.chunk.js",
+    "static/css/main.130041d7.chunk.css",
+    "static/js/main.4e0b4fdf.chunk.js"
   ]
 }
