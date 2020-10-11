@@ -16,13 +16,14 @@ export default class InputRange extends Component<IProps, IState> {
   }
 
   onRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { onRangeChange } = this.props;
     const {
       target: { value },
     } = e;
-    const { onRangeChange } = this.props;
-    this.setState({ value: parseInt(value, 2) }, () =>
-      onRangeChange(parseInt(value, 2)),
-    );
+    const parsedValue = parseInt(value, 10);
+    this.setState({ value: parsedValue }, () => {
+      onRangeChange(parsedValue);
+    });
   };
 
   render() {

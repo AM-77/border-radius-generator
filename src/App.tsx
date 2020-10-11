@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+
 import HalfControl from './components/HalfControl';
 import FullControl from './components/FullControl';
 import Controllers from './components/Controllers';
 import Footer from './components/Footer';
+
+import bgImage from './assets/hero-bg.svg';
 
 interface IState {
   width: number;
@@ -22,8 +25,8 @@ export default class App extends Component<unknown, IState> {
   constructor(props: unknown) {
     super(props);
     this.state = {
-      width: 200,
-      height: 200,
+      width: 300,
+      height: 300,
       left: 71,
       leftOp: 29,
       top: 34,
@@ -86,14 +89,21 @@ export default class App extends Component<unknown, IState> {
     } = this.state;
 
     return (
-      <div className="container">
-        <div className="layer" />
-        <div className="off-layer">
-          <div className="desc">
-            <h1>border radius generator</h1>
-            <p>A visaul tool to generate a custom border radius</p>
+      <>
+        <div className="under-container">
+          <div className="left">
+            <img src={bgImage} alt="left background" />
           </div>
-          <div className="main">
+          <div className="right">
+            <img src={bgImage} alt="right background" />
+          </div>
+        </div>
+        <div className="container">
+          <div className="header">
+            <div className="desc">
+              <h1>border radius generator</h1>
+              <p>A visaul tool to generate a custom border radius</p>
+            </div>
             <div className="control">
               {isHalf ? (
                 <HalfControl
@@ -125,6 +135,8 @@ export default class App extends Component<unknown, IState> {
                 />
               )}
             </div>
+          </div>
+          <div className="main">
             <Controllers
               onDimensionChange={this.onDimensionChange}
               onControlRangeChange={this.onControlRangeChange}
@@ -140,11 +152,9 @@ export default class App extends Component<unknown, IState> {
               bottomOp={bottomOp}
             />
           </div>
-          <div className="footer">
-            <Footer />
-          </div>
+          <Footer />
         </div>
-      </div>
+      </>
     );
   }
 }
